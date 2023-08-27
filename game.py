@@ -69,6 +69,13 @@ class Game:
                 player_actor.draw(self.screen, self.timestep)
                 player_actor.update(self.timestep)
 
+            # draw player's last_action under them
+            for player_actor in all_players:
+                last_action_text = self.font.render(player_actor.last_action, True, (0, 0, 0))
+                last_action_rect = last_action_text.get_rect()
+                last_action_rect.center = (player_actor.rect.x + (utils.PLAYER_WIDTH // 2), player_actor.rect.y + utils.PLAYER_HEIGHT + 4)
+                self.screen.blit(last_action_text, last_action_rect)
+
             if self.ball.possessor is None:
                 self.screen.blit(self.ball.image, self.ball.rect)
 

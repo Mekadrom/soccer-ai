@@ -35,6 +35,7 @@ class Player(pygame.sprite.Sprite):
         self.is_moving = False
 
         self.model = None
+        self.last_action = None
 
         self.update_image()
 
@@ -54,6 +55,7 @@ class Player(pygame.sprite.Sprite):
         if self.player_hook:
             actions = self.player_hook.get_actions(self, utils.get_state(self.game, self))
             action = utils.get_action(actions[0])
+            self.last_action = action
 
             self.model.set_action(actions[0])
 

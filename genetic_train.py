@@ -4,11 +4,9 @@ from torch.utils.tensorboard import SummaryWriter
 import ai_player_hook
 import argparse
 import game
-import json
 import numpy as np
 import os
 import random
-import tensorboard
 import torch
 import torch.nn as nn
 
